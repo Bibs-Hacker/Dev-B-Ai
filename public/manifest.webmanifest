@@ -1,0 +1,10 @@
+{
+  "name":"Dev Brian AI",
+  "short_name":"Dev Brian AI",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#050816",
+  "theme_color":"#070a18",
+  "description":"Dev Brian AI — intelligence, creativity and connection.",
+  "icons":[{"src":"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23050816'/%3E%3Ccircle cx='256' cy='256' r='145' fill='none' stroke='%234d7cff' stroke-width='18'/%3E%3Ctext x='256' y='285' text-anchor='middle' font-family='Arial' font-size='100' font-weight='700' fill='white'%3EDB3%3C/text%3E%3C/svg%3E","sizes":"any","type":"image/svg+xml"}]
+}

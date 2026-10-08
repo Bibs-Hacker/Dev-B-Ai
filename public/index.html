@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#070a18" />
+  <meta name="description" content="Dev Brian AI — intelligence, creativity and connection." />
+  <title>Dev Brian AI — Intelligence, Creativity, Connection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;600;700&family=Orbitron:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+    <div class="splash-core"><div class="logo-mark">DB<span>3</span></div></div>
+    <div class="splash-title">DEV BRIAN <span>AI</span></div>
+    <div class="splash-tag">INTELLIGENCE · CREATIVITY · CONNECTION</div>
+    <div class="boot"><div class="boot-line"><span id="bootText">Initializing neural core…</span><b id="bootPct">0%</b></div><div class="progress"><i id="bootBar"></i></div></div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand"><div class="mini-logo">DB<span>3</span></div><div><strong>DEV BRIAN AI</strong><small>Intelligent Core</small></div></div>
+      <button id="newChat" class="primary-btn full"><span class="icon">＋</span> New Chat</button>
+      <nav class="nav">
+        <button data-view="chat" class="nav-btn active"><span>⌂</span> Chat</button>
+        <button data-view="history" class="nav-btn"><span>◷</span> History</button>
+        <button data-view="memory" class="nav-btn"><span>◈</span> Memory</button>
+        <button data-view="developer" class="nav-btn"><span>⌘</span> Developer Mode</button>
+        <button data-view="image" class="nav-btn"><span>✦</span> Image Studio</button>
+        <button data-view="settings" class="nav-btn"><span>⚙</span> Settings</button>
+      </nav>
+      <div class="recent-title">RECENT CHATS <span>⌄</span></div>
+      <div id="recentChats" class="recent"></div>
+      <div class="profile-mini" id="profileMini"><div class="avatar" id="avatarMini">B</div><div><b id="nameMini">Brian Omondi</b><small id="handleMini">@devbrian</small></div><button data-view="settings">⚙</button></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div class="mobile-brand"><div class="mini-logo">DB<span>3</span></div><b>DEV BRIAN AI</b></div><div class="status"><i></i> Online · Intelligent Core Active</div><div class="top-actions"><button id="searchBtn" title="Search history">⌕</button><button id="historyBtn" title="History">◷</button><button id="settingsBtn" title="Settings">⚙</button><button id="menuBtn" class="mobile-only">☰</button></div></header>
+
+      <section id="view-chat" class="view active-view">
+        <div id="chatScroll" class="chat-scroll">
+          <div id="welcome" class="welcome"><div class="hero-logo">DB<span>3</span></div><h1>Hello, <span id="helloName">Brian</span>.</h1><p>I’m Dev Brian AI — your intelligent creative companion.</p><div class="quick-grid">
+            <button data-prompt="Explain something to me like an expert teacher, then give me a practical example."><b>Explain</b><small>Deep learning</small></button>
+            <button data-prompt="Help me architect a professional software project from scratch."><b>Build</b><small>Project architecture</small></button>
+            <button data-prompt="Write production-quality code for my idea and explain every important decision."><b>Code</b><small>Developer mode</small></button>
+            <button data-prompt="Give me a thoughtful, romantic message that feels natural and personal."><b>Romance</b><small>Warm & natural</small></button>
+          </div></div>
+          <div id="messages" class="messages"></div>
+        </div>
+        <div class="composer-wrap"><div id="attachmentTray" class="attachment-tray"></div><form id="composer" class="composer"><button type="button" id="attachBtn" title="Attach text file">＋</button><input id="fileInput" type="file" hidden accept=".txt,.md,.json,.js,.html,.css,.csv,.xml,.log"/><textarea id="prompt" rows="1" placeholder="Message Dev Brian AI…"></textarea><button type="button" id="voiceBtn" title="Voice input">⌁</button><button type="submit" class="send-btn" title="Send">➤</button></form><div class="composer-meta"><label><input id="webSearch" type="checkbox"> Web search</label><span>Enter to send · Shift+Enter for new line</span></div></div>
+      </section>
+
+      <section id="view-history" class="view"><div class="page-head"><div><span class="eyebrow">CONVERSATION MEMORY</span><h2>History</h2><p>Every local conversation is searchable, renameable and exportable.</p></div><button id="exportBtn" class="ghost-btn">Export</button></div><div id="historyList" class="history-list"></div></section>
+      <section id="view-memory" class="view"><div class="page-head"><div><span class="eyebrow">PERSONAL CONTEXT</span><h2>Memory</h2><p>Control the information Dev Brian AI uses to personalize responses.</p></div><button id="clearMemory" class="danger-btn">Clear Memory</button></div><textarea id="memoryEditor" class="large-editor" placeholder="Example: I prefer advanced coding explanations…"></textarea><button id="saveMemory" class="primary-btn">Save Memory</button></section>
+      <section id="view-developer" class="view"><div class="page-head"><div><span class="eyebrow">ENGINEERING LAB</span><h2>Developer Mode</h2><p>Turn Dev Brian AI into your coding architect, debugger and reviewer.</p></div></div><div class="dev-grid"><button data-prompt="Review the architecture of my current project and identify security, scalability and maintainability risks.">Architecture Review</button><button data-prompt="Act as a senior debugger. Ask for the relevant code only if necessary, then diagnose the bug systematically.">Debug</button><button data-prompt="Refactor my next code sample for production quality, readability, performance and security.">Refactor</button><button data-prompt="Create a professional GitHub-ready project structure for my next web application.">Generate Project</button><button data-prompt="Teach me this programming concept at an advanced professional level, with examples and pitfalls.">Teach Me</button><button data-prompt="Perform a security review of this application concept and propose concrete fixes.">Security Audit</button></div></section>
+      <section id="view-image" class="view"><div class="page-head"><div><span class="eyebrow">CREATIVE ENGINE</span><h2>Image Studio</h2><p>Describe a visual and Dev Brian AI will send it to the image generation engine.</p></div></div><div class="image-studio"><textarea id="imagePrompt" class="large-editor" placeholder="A cinematic futuristic Dev Brian AI command center, neon blue and violet, ultra-detailed…"></textarea><button id="generateImage" class="primary-btn">Generate Image</button><div id="imageResult" class="image-result"></div></div></section>
+      <section id="view-settings" class="view"><div class="page-head"><div><span class="eyebrow">CONTROL CENTER</span><h2>Settings</h2><p>Shape the visual identity and personality of your AI.</p></div></div><div class="settings-layout"><div class="settings-nav"><button class="setting-tab active" data-tab="appearance">Appearance</button><button class="setting-tab" data-tab="personality">AI Personality</button><button class="setting-tab" data-tab="profile">Edit Profile</button><button class="setting-tab" data-tab="chatsettings">Chat</button><button class="setting-tab" data-tab="privacy">Privacy</button></div><div class="settings-panel">
+        <div data-panel="appearance" class="setting-panel active"><h3>Appearance</h3><label>Theme</label><div id="themeGrid" class="theme-grid"></div><label>Font</label><select id="fontSelect"></select><label>Font size <output id="fontSizeOut">16px</output></label><input id="fontSize" type="range" min="14" max="20" value="16"/><label class="toggle-row"><span>Animations</span><input id="animations" type="checkbox" checked></label><label class="toggle-row"><span>Glass effects</span><input id="glass" type="checkbox" checked></label></div>
+        <div data-panel="personality" class="setting-panel"><h3>Personality Matrix</h3><div id="sliders"></div></div>
+        <div data-panel="profile" class="setting-panel"><h3>Edit Profile</h3><div class="profile-edit"><div class="avatar large" id="profileAvatar">B</div><div><label>Display name</label><input id="displayName"/><label>Username</label><input id="username"/><label>Bio</label><textarea id="bio"></textarea><button id="saveProfile" class="primary-btn">Save Profile</button></div></div></div>
+        <div data-panel="chatsettings" class="setting-panel"><h3>Chat Behavior</h3><label class="toggle-row"><span>Enter sends message</span><input id="enterSend" type="checkbox" checked></label><label class="toggle-row"><span>Auto-scroll</span><input id="autoScroll" type="checkbox" checked></label><label class="toggle-row"><span>Show timestamps</span><input id="timestamps" type="checkbox" checked></label></div>
+        <div data-panel="privacy" class="setting-panel"><h3>Privacy</h3><p class="muted">Conversation history, profile and settings are stored in this browser by default. Your OpenAI key is never placed in frontend JavaScript.</p><button id="clearHistory" class="danger-btn">Delete Local History</button></div>
+      </div></div></section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+  <script>if("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(()=>{});</script>
+</body>
+</html>
